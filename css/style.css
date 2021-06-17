@@ -1,0 +1,362 @@
+/** Custom Properties **/
+
+:root {
+    --primario: hsl(209, 49%, 77%);
+    --primarioOscurito: hsl(209, 83%, 35%);
+    --secundario: #f077ea;
+    --gris: rgba(145, 135, 135);
+    --secundarioOscurito: rgba(181, 34, 174, 0.85);
+    --fuentePrimaria: 'Arial', Helvetica, sans-serif;
+    --fuenteSecundaria: 'Poppins', sans-serif;
+    --negrito: rgb(59, 57, 57);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: var(--fuentePrimaria);
+    transition: all 0.4s;
+}
+
+body.darkmode {
+    background-color: var(--negrito);
+}
+
+.center{
+    text-align: center;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.barra {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+}
+
+/* botones */
+
+.btn {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.btn-editar {
+    color: var(--secundario);
+}
+
+.btn-borrar {
+    color: var(--primario);
+}
+
+.volver {
+    background-color: var(--secundario);
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: .5rem;
+}
+
+/* Backgrounds */
+
+.bg-blanco {
+    background-color: white;
+}
+
+.darkmode .bg-blanco {
+    background-color: gray;
+}
+
+.bg-secu {
+    background-color: var(--secundario);
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+h1, h2 {
+    font-family: var(--fuenteSecundaria);
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    padding: 20px;
+    color: white;
+}
+
+.darkmode h1 {
+    color: black;
+}
+
+h2 {
+    color: var(--primario);
+}
+
+.contenedor-barra {
+    background-color: var(--gris);
+    display: flex;
+    justify-content: space-around;
+}
+
+.darkmode .contenedor-barra {
+    background-color: var(--primario);
+}
+
+.contenedor-barra h1 {
+    margin: 0 auto;
+    padding-left: 7rem;
+}
+
+.contenedor-barra button {
+    margin-right: 3rem;
+    font-size: 1.5rem;
+    padding: 0 15px;
+    background-color: var(--gris);
+    border: none;
+}
+
+.darkmode .contenedor-barra button {
+    background-color: var(--primario);
+}
+
+.contenedor-barra button:hover {
+    background-color: rgb(59, 57, 57);
+    color: aliceblue;
+}
+
+.darkmode .contenedor-barra button:hover {
+    color: var(--negrito);
+    background-color: aliceblue;
+}
+
+form {
+    padding: 3rem;
+    margin-top: 2rem;
+}
+
+form legend {
+    font-family: var(--fuenteSecundaria);
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+    color: white;
+}
+
+.darkmode form legend, .darkmode form label {
+    color: black;
+}
+
+form div.campo label {
+    color: white;
+}
+
+.darkmode form div.campo label {
+    color: black;
+}
+
+legend span {
+    font-size: 1rem;
+    margin-top: 1rem;
+    clear: both;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+@media (min-width:768px) {
+    .campos {
+        display: flex;
+        justify-content: space-between;
+    }
+    .campo {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+.campo {
+    padding: .5rem 0;
+}
+
+.campo label {
+    font-size: 1.2rem;
+}
+
+.campo input[type="text"], .campo input[type="tel"] {
+    width: 100%;
+    border: none;
+    padding: .5rem;
+    height: 3rem;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+}
+
+.darkmode input{
+    background-color: var(--gris);
+}
+
+.darkmode input::placeholder {
+    color: aliceblue;
+}
+
+.enviar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.campo input[type="submit"] {
+    background-color: var(--primario);
+    border: none;
+    color: white;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: background-color .35s ease-in-out;
+    flex: 1;
+}
+
+.campo input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--secundarioOscurito);
+}
+
+@media (min-width:768px) {
+    .campo input[type="submit"] {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width:768px) {
+    .contenedor-tabla {
+        overflow: scroll;
+    }
+}
+
+/* listado contactos */
+
+.contactos {
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.contenedor-contactos {
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+}
+
+.contenedor-contactos h2 {
+    color: var(--secundario);
+}
+
+.contactos {
+    background-color: var(--primario);
+}
+
+.total-contactos {
+    margin: 2rem 0;
+    text-align: center;
+    color: var(--secundario);
+    font-size: 2rem;
+    font-family: var(--fuenteSecundaria);
+}
+
+.total-contactos span {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.buscador {
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    border: 1px solid var(--secundario);
+    margin: 2rem 0;
+}
+
+.contenedor-tabla{
+    background-color: white;
+}
+
+.darkmode .contenedor-tabla{
+    background-color: var(--gris);
+}
+
+.listado-contactos {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+
+.listado-contactos thead {
+    background-color: aliceblue;
+    color: var(--secundario);
+    text-transform: uppercase;
+}
+
+.listado-contactos thead {
+    background-color: var(--secundario);
+    color: aliceblue;
+}
+
+.listado-contactos thead th {
+    padding: 1rem 0;
+}
+
+.listado-contactos tbody td {
+    padding: .5rem;
+    color: var(--secundario);
+    text-align: center;
+}
+
+.darkmode .listado-contactos tbody td {
+    color: aliceblue;
+}
+
+.listado-contactos button {
+    background-color: transparent!important;
+    border: none;
+}
+
+#h1edit {
+    padding-right: 100px;
+}
+
+/* notificaciones */
+
+.notificacion {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.correcto {
+    background-color: rgb(117, 206, 241);
+    color: rgb(0, 92, 128);
+}
+
+.error {
+    background-color: rgb(238, 148, 166);
+    color: rgb(163, 0, 33);
+}
